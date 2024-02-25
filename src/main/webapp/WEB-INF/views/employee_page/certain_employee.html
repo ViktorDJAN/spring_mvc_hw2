@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+</head>
+<body>
+<h3 th:text="${employee.getId()}">value</h3>
+<h2 th:text="${employee.getFirstName()}">value</h2>
+<h2 th:text="${employee.getSecondName()}">value</h2>
+<h2 th:text="${employee.getPosition()}">value</h2>
+
+</br>
+<a th:href="@{/chief_page}">Go to Chief Menu</a>
+</br>
+<a th:href="@{/chief_page/{id}/edit(id=${employee.getId()})}">Edit employee</a>
+</br>
+<form th:method="DELETE" th:action="@{/chief_page/{id}(id=${employee.getId()})}">
+    <input type="submit" value="Delete employee"/>
+</form>
+</body>
+</html>

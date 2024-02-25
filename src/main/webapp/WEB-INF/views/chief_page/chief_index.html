@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chief</title>
+</head>
+<body>
+<H1>Chief page </H1>
+
+<div th:each="employee:${employees}">
+
+    <a th:href="@{chief_page/{employee_id}(employee_id=${employee.getId()})}"
+       th:text="${employee.getFirstName()} + ' '+${employee.getSecondName()} +
+       ' '+${employee.getPosition()}">employee</a>
+
+</div>
+</br>
+</br>
+<a th:href="@{chief_page/new}">Create new employee</a>
+
+
+</body>
+</html>
